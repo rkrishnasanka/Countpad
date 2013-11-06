@@ -27,7 +27,25 @@ namespace Countpad
 
         private void TextBox_CountPad_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Char_Count.Text = String.Format("Character Count: {0}",(TextBox_CountPad.Text).Replace("\r\n","").Length);
+            var character_count = (TextBox_CountPad.Text).Replace("\r\n", "").Length;
+            String text = TextBox_CountPad.Text.Trim();
+            int wordCount = 0, index = 0;
+
+            while (index < text.Length)
+            {
+                // check if current char is part of a word
+                while (index < text.Length && Char.IsWhiteSpace(text[index]) == false)
+                    index++;
+
+                wordCount++;
+
+                // skip whitespace until next word
+                while (index < text.Length && Char.IsWhiteSpace(text[index]) == true)
+                    index++;
+            }
+            
+            Char_Count.Text = String.Format("Character Count: {0} Word Count: {1}",character_count,wordCount);
+
         }
     }
-}
+};

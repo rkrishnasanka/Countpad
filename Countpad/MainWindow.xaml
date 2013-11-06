@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Countpad" Height="600" Width="800">
     <Grid>
-        <StackPanel>
-            <TextBox Name="TextBox_CountPad" Height="550" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" TextWrapping="Wrap" TextChanged="TextBox_CountPad_TextChanged"/>
+        <StackPanel VerticalAlignment="Top" Margin="0,0,0,0">
+            <TextBox x:Name="TextBox_CountPad"  ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" TextWrapping="Wrap" TextChanged="TextBox_CountPad_TextChanged" Height="538"/>
             <TextBlock x:Name="Char_Count" Text=""/>
-        </StackPanel>    
+        </StackPanel>
     </Grid>
 </Window>
